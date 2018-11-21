@@ -17,6 +17,34 @@ public class MergeSort {
     }
     public static void merge(int[] elements, int from, int mid, int to, int[] temp)
     {
-        
+        int i = from;
+        int j = mid + 1;
+        int k = from;
+        while (i <= mid && j <= to)
+        {
+            if (i < j)
+            {
+                temp[k]=i;
+            }
+            else
+            {
+                temp[k]=j;
+            }
+            k++;
+        }
+        while (i <= mid)
+        {
+            temp[k] = i;
+            k++;
+        }
+        while (j <= to)
+        {
+            temp[k] = j;
+            k++;
+        }
+        for (i = from;i <= to;i++)
+        {
+            elements[i] = temp[i];
+        }
     }
 }
